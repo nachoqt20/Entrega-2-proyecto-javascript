@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trabajo Final - Módulo 2 | JavaScript</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <h1 class="site-title">App Interactiva JS</h1>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+          <li><a href="#tareas" class="nav-link">Lista de Tareas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <!-- Sección 1: Calculadora Básica -->
+    <section id="calculadora" class="card-section" aria-labelledby="calc-heading">
+      <h2 id="calc-heading" class="section-title">Calculadora Básica</h2>
+      <p class="section-subtitle">Realizá operaciones de suma, resta, multiplicación y división.</p>
+
+      <div class="calculator">
+        <div class="calc-display-wrapper">
+          <input
+            type="text"
+            id="calc-display"
+            class="calc-display"
+            value="0"
+            readonly
+            aria-label="Pantalla de la calculadora"
+          />
+        </div>
+
+        <div class="calc-buttons" role="group" aria-label="Botones de la calculadora">
+          <button type="button" class="btn btn-action" data-action="clear">C</button>
+          <button type="button" class="btn btn-action" data-action="delete">DEL</button>
+          <button type="button" class="btn btn-operator" data-value="/">÷</button>
+          <button type="button" class="btn btn-operator" data-value="*">×</button>
+
+          <button type="button" class="btn btn-number" data-value="7">7</button>
+          <button type="button" class="btn btn-number" data-value="8">8</button>
+          <button type="button" class="btn btn-number" data-value="9">9</button>
+          <button type="button" class="btn btn-operator" data-value="-">−</button>
+
+          <button type="button" class="btn btn-number" data-value="4">4</button>
+          <button type="button" class="btn btn-number" data-value="5">5</button>
+          <button type="button" class="btn btn-number" data-value="6">6</button>
+          <button type="button" class="btn btn-operator" data-value="+">+</button>
+
+          <button type="button" class="btn btn-number" data-value="1">1</button>
+          <button type="button" class="btn btn-number" data-value="2">2</button>
+          <button type="button" class="btn btn-number" data-value="3">3</button>
+          <button type="button" class="btn btn-equals" data-action="calculate">=</button>
+
+          <button type="button" class="btn btn-number btn-zero" data-value="0">0</button>
+          <button type="button" class="btn btn-number" data-value=".">.</button>
+        </div>
+
+        <p id="calc-message" class="calc-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Sección 2: Lista de Tareas -->
+    <section id="tareas" class="card-section" aria-labelledby="todo-heading">
+      <h2 id="todo-heading" class="section-title">Lista de Tareas</h2>
+      <p class="section-subtitle">Agregá tareas, marcalas como completadas o eliminá las que ya no necesites.</p>
+
+      <form id="todo-form" class="todo-form">
+        <label for="todo-input" class="visually-hidden">Nueva tarea</label>
+        <input
+          type="text"
+          id="todo-input"
+          class="todo-input"
+          placeholder="Escribí una tarea..."
+          autocomplete="off"
+        />
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </form>
+
+      <ul id="todo-list" class="todo-list" aria-live="polite">
+        <!-- Las tareas se renderizarán dinámicamente desde JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Trabajo Final del Módulo 2 — Introducción a JavaScript (ICARO)</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
